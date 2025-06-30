@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProDigy Infotech</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+    scroll-behavior: smooth;
+  }
+
+  /* Navigation */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    border-bottom: 1px solid #2a2a2a;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .nav-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0ff;
+  }
+
+  .nav-menu a {
+    color: #ccc;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .nav-menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #0ff;
+    transition: width 0.3s ease;
+  }
+
+  .nav-menu a:hover {
+    color: #0ff;
+  }
+
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+
+  .nav-container.scrolled {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+  }
+
+  /* Section styles */
+  .section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;
+    padding: 60px 20px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #home {
+    background: linear-gradient(135deg, #000428, #719bc0);
+  }
+
+  #about {
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+  }
+
+  #services {
+    background: linear-gradient(135deg, #42275a, #734b6d);
+  }
+
+  #contact {
+    background: linear-gradient(135deg, #141e30, #243b55);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .nav-menu {
+      margin-top: 10px;
+    }
+
+    .nav-menu a {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+</style>
+
+
+
+
+
+</head>
+<body>
+
+  <header class="nav-container" id="nav">
+    <div class="nav-logo">ProDigy</div>
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="section blue-square">01<br>Blue Gradient Square</section>
+  <section id="about" class="section gradient-circle">Circle with Gradient</section>
+  <section id="services" class="section blue-square">Blue Gradient Square</section>
+  <section id="contact" class="section gradient-circle">Circle with Gradient</section>
+
+  <script src="script.js"></script>
+  <script>
+    const navbar = document.getElementById("nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
+
+  </script>
+</body>
+</html>
